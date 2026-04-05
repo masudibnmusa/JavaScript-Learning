@@ -1,6 +1,17 @@
-let a = Number(prompt("Enter the 1st number : "));
-let b = Number(prompt("Enter the 1st number : "));
+const readline = require("readline");
 
-let sum = a+b;
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 
-console.log("Sum is : ",sum)
+rl.question("Enter the 1st number : ", function(a) {
+    rl.question("Enter the 2nd number : ", function(b) {
+
+        let sum = Number(a) + Number(b);
+
+        console.log("Sum is : ", sum);
+
+        rl.close();
+    });
+});
